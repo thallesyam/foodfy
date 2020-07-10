@@ -1,0 +1,36 @@
+{% extends 'Admin/Recipes/layout.njk' %}
+
+{% block styles %}
+
+  <link rel="stylesheet" href="/Styles/Admin/listagem.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+  <section>
+    <div class="container">
+      <h2>Gerenciar receitas</h2>
+
+      <div class="cards">
+        {% for item in items %}
+
+            <div class="card">
+              <div class="img" style="background-image: url('{{item.image}}')"></div>
+              <div class="card-text">
+                <h3>{{item.title}}</h3>
+                {% for chef in chefs %}
+                  {% if item.chef_id == chef.id %}
+                    <span>{{chef.name}}</span>
+                  {% endif %}
+                {% endfor %}
+                <a href="/Admin/recipes/{{item.id}}">Visualizar</a>
+              </div>
+            </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+

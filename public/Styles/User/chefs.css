@@ -1,0 +1,51 @@
+.chefs-all{
+  width: 100%;
+  margin-top: 50px;
+}
+
+.chefs-single{
+  display: flex;
+  align-items: center;
+}
+
+.chefs-single .description{
+  flex-direction: column;
+  margin: 0 40px 0 20px;
+
+}
+
+.chefs-single .description h3{
+  font-weight: 700;
+  font-size: 20px;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.chefs-single .description p {
+  font-size: 14px;
+  color: #666666;
+}
+
+.chefs-single img{
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+}
+
+ .btn{
+  width: 120px;
+  height: 40px;
+  background-color: #6558C3 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 700;
+  margin: 30px 0;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}

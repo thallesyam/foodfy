@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root{
+  --text-color: #111111
+}
+
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+}
+
+body, html{
+  height: 100%;
+}
+
+.container{
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+header{
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+header .header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .header-container h1{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 28px;
+  color: var(--text-color);
+  letter-spacing: 1.65px;
+}
+
+header .header-container .links{
+  text-align: center;
+}
+
+header .header-container a{
+  padding: 0 20px;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+header .header-container .bold{
+  font-weight: bold;
+}
+

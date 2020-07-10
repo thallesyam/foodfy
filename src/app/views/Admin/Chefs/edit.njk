@@ -1,0 +1,39 @@
+{% extends 'Admin/Chefs/layout.njk' %}
+
+{% block styles %}
+
+  <link rel="stylesheet" href="/Styles/Admin/create.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+  <section>
+    <div class="container">
+      <div class="form">
+        <form action="/Admin/chefs?_method=PUT" method="post">
+          <div class="header">
+            <h1>Editar Chefe</h1>
+            <button type="submit">Salvar chefe</button>
+          </div>
+          {% include 'Admin/Chefs/fields.njk' %}
+          <input type="hidden" name="id" value="{{item.id}}">
+        </form>
+
+        <form id="form-delete" action="/Admin/chefs?_method=DELETE" method="POST">
+          <input type="hidden" name="id" value="{{item.id}}">
+          <button type="submit">Deletar</button>
+        </form>
+
+        {%include 'Admin/Chefs/confirm.njk' %}
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+  <script src="/Scripts/itemCreate.js"></script>
+
+{% endblock scripts %}

@@ -1,0 +1,34 @@
+{% extends 'Admin/Recipes/layout.njk' %}
+
+{% block styles %}
+
+  <link rel="stylesheet" href="/Styles/Admin/create.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+  <section>
+    <div class="container">
+      <div class="form">
+        <form action="/Admin/recipes" method="post">
+          <div class="header">
+            <h1>Criando receita</h1>
+            <button type="submit">Salvar receita</button>
+          </div>
+          
+          {% include 'Admin/Recipes/fields.njk' %}
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+  <script src="/Scripts/itemCreate.js"></script>
+
+{% endblock scripts %}

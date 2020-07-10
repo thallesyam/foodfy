@@ -1,0 +1,34 @@
+{% extends 'User/Chefs/layout.njk' %}
+
+{% block styles %}
+
+  <link rel="stylesheet" href="/Styles/User/chefs.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+  <div class="container">
+
+    <a class="btn" href="/">Home</a>
+
+    <div class="chefs-all">
+      {% for item in items %}
+        <div class="chefs-single">
+          <img src="{{item.avatar_url}}" alt="Imagem do chefe">
+          <div class="description">
+            <h3>{{item.name}}</h3>
+            <p>{{item.total_recipe}} 
+              {% if item.total_recipe > 1 %}
+                receitas
+              {% else %}
+                receita
+              {% endif %}
+            </p>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

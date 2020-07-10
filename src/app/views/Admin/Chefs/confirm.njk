@@ -1,0 +1,12 @@
+<script>
+  const btnDelete = document.querySelector("#form-delete")
+
+  btnDelete.addEventListener("submit", function(event){
+    const confirmation = confirm('Quer continuar')
+
+    if(!confirmation){
+      event.preventDefault()
+    }
+  })
+
+</script>

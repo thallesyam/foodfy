@@ -1,0 +1,45 @@
+<div class="item">
+  <label>Imagem da receita</label>
+  <input type="url" name="recipe_url" required value="{{item.recipe_url}}">
+</div>
+
+<div class="item">
+  <label>Título da receita</label>
+  <input type="text" name="title" required value="{{item.title}}">
+</div>
+
+<div class="item">
+  <label>Chefe</label>
+  <select name="chef_id">
+    {% for item in items %}
+      <option value="{{item.id}}">
+        {{item.name}}
+      </option>
+    {% endfor %}
+  </select>
+</div>
+
+<div class="item">
+  <div id="ingredients">
+    <label>ingredientes</label>
+    <div class="ingredient">
+      <input type="text" name="ingredients[]"/>
+    </div>
+  </div>
+  <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
+</div>
+
+<div class="item">
+  <div id="passos">
+    <label>Modo de preparo</label>
+    <div class="passo">
+      <input type="text" name="passos[]"/>
+    </div>
+  </div>
+  <button type="button" class="add-passo">Adicionar novo passo</button>
+</div>
+
+<div class="item">
+  <label>Informações adicionais</label>
+  <textarea name="info_add"></textarea>
+</div>

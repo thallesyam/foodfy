@@ -1,0 +1,46 @@
+{% extends 'User/Recipes/layout.njk' %}
+
+{% block scripts %}
+
+  <link rel="stylesheet" href="/Styles/User/home.css">
+
+{% endblock scripts %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="call">
+      <div class="text">
+        <h3>As melhores receitas</h3>
+        <p>Aprenda a construir os melhores pratos <br />
+          com receitas criadas por profissionais <br />
+          do mundo inteiro.
+        </p>
+      </div>
+      <div class="img">
+        <img src="/Assets/chef.png" alt="">
+      </div>
+    </div>
+
+    <div class="recipes-all">
+      <h3>Mais acessadas</h3>
+      <div class="cards">
+        {% for item in arraySlice %}
+          <div class="card-single">
+            <img src="{{item.image}}" alt="">
+            <h3>{{item.title}}</h3>
+            {% for chef in chefs %}
+              {% if item.chef_id == chef.id %}
+                <p>por {{chef.name}}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,93 @@
+
+.image-container{
+  text-align: center;
+}
+.image-container img{
+  width: 100%;
+  max-width: 940px;
+  height: 280px;
+  border-radius: 18px;
+}
+.title{
+  margin: 3.9% 0 0;
+  text-align: center;
+}
+.receita-container{
+  margin-top: 40px;
+}
+.receita-container .title h1{
+  color: var(--text-color);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 42px;
+}
+
+.title h3{
+  font-size: 20px;
+  font-weight: 400;
+  color: #777777; 
+}
+
+.ingredients {
+  margin: 3.9% 0;
+}
+
+.receita-container h1{
+  display: inline-block;
+  padding-right: 20px;
+  font-size: 24px;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.receita-container ul {
+  margin-top: 1.6%;
+  list-style-position: inside;
+  color: #444444;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.receita-container ul.esconder{
+  display: none;
+}
+
+.informacoes{
+  margin-top: 3.7%;
+}
+
+.informacoes p{
+  margin: 1.6% 0 20px 0;
+  color: #444444;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.receita-container a{
+  cursor: pointer;
+}
+.informacoes ul{
+  list-style-type: none;
+}
+
+.btnEdit{
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.btnEdit a{
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #6558C3;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.btnEdit a:hover{
+  opacity: 0.9;
+}

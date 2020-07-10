@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Styles/Admin/style.css">
+  {% block styles %}{% endblock styles %}
+  <title>Listagem - Admin</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Foodfy</h1>
+      <a href="/Admin/recipes" class="active">Receitas</a>
+      <a href="/Admin/chefs">Chefes</a>
+    </div>
+  </header>
+  {% block content %}{% endblock content %}
+  {% block scripts %}{% endblock scripts %}
+
+  <script src="/Scripts/menu-ativo.js"></script>
+
+  
+</body>
+</html>

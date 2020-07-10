@@ -1,0 +1,43 @@
+{% extends 'Admin/Recipes/layout.njk' %}
+
+{% block styles %}
+
+  <link rel="stylesheet" href="/Styles/Admin/create.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+  <section>
+    <div class="container">
+
+      <div class="form">
+
+          <form action="/Admin/recipes?_method=PUT" method="post">
+            <div class="header">
+              <h1>Editar receita</h1>
+              <button type="submit">Salvar receita</button>
+            </div>
+            {%include 'Admin/Recipes/editField.njk' %}
+            <input type="hidden" name="id" value="{{item.id}}">
+          </form>
+
+          <form id="form-delete" action="/Admin/recipes?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value="{{item.id}}">
+            <button type="submit">Deletar</button>
+          </form>
+
+        {%include 'Admin/Recipes/confirm.njk' %}
+      </div>
+
+    </div>
+    
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+  <script src="/Scripts/itemCreate.js"></script>
+
+{% endblock scripts %}

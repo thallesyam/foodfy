@@ -1,0 +1,62 @@
+{% extends 'User/Recipes/layout.njk' %}
+
+{% block styles %}
+
+<link rel="stylesheet" href="Styles/User/receitas.css">
+
+{% endblock styles %}
+
+{% block content %}
+
+<!--TODO montar design e estruturar e estilizar page -->
+
+<section>
+  
+  <div class="container">
+    
+      <div class="filterFind">
+        {% if filter != ''%}
+          <h2>Buscando por "{{filter}}"</h2>
+          <a class="btn btnCondition" href="/">Home</a>
+        {% else %}
+          <a class="btn" href="/">Home</a>
+        {% endif %}
+      </div>
+
+
+      <div class="cards">
+      {% for item in items %}
+          <div class="card">
+            <div class="image">
+              <img src="{{item.image}}">
+            </div>
+            <div class="text">
+              <h1>{{item.title}}</h1>
+              {% for id in chefs %}
+                {% if item.chef_id == id.id %}
+                  <h3>{{id.name}}</h3>
+                {% endif %}
+              {% endfor %}
+              <a href="/recipes/{{item.id}}">Acessar receita</a>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+
+    <div class="pagination"
+      data-page={{pagination.page}}
+      data-total={{pagination.total}}
+      data-filter={{filter}}
+    ></div>
+  </div>
+  
+</section>
+
+  
+{% endblock content %}
+
+{% block scripts %}
+
+<script src="/Scripts/paginate.js"></script>
+
+{% endblock scripts %}

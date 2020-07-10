@@ -1,0 +1,62 @@
+{% extends 'Admin/Recipes/layout.njk' %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/Styles/Admin/receita-single.css">
+{% endblock styles %}
+
+{% block content %}
+
+<section>
+
+  <div class="container">
+  <div class="receita-container">
+    <div class="btnEdit">
+      <a href="/Admin/recipes/{{item.id}}/edit">Editar</a>
+    </div>
+
+    <div class="image-container">
+        <img src="{{item.image}}">
+    </div><!--image-container-->
+
+    <div class="title">
+        <h1>{{item.title}}</h1>
+        <h3>Por {{opt.name}}</h3>
+    </div><!--title-->
+
+    <div class="ingredients">
+      <h1>Ingredientes</h1><a id="element1">esconder</a>
+      <ul>
+          {% for ingredient in item.ingredients %}
+            <li>{{ingredient}}</li>
+          {% endfor %}
+      </ul>
+    </div><!--ingredients-->
+
+    <div class="preparo">
+        <h1>Modo de preparo</h1><a id="element2">esconder</a>
+        <ul id="ulElement2">
+            {% for passo in item.preparation %}
+              <li>{{passo}}</li>
+            {% endfor %}
+        </ul>
+    </div><!--preparo-->
+
+    <div class="informacoes">
+      <h1>Informações adicionais</h1><a id="element3">esconder</a>
+      <ul id="ulElement3">
+        <li>{{item.information}}</li>
+      </ul>
+    </div>
+  </div><!--receita-container-->
+</div><!--container-->
+
+
+</section>
+
+{% endblock content %}
+
+{% block scripts %}
+
+  <script src="/Scripts/script.js"></script>
+
+{% endblock scripts %}

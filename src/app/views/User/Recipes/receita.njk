@@ -1,0 +1,55 @@
+{% extends 'User/Recipes/layout.njk' %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/Styles/User/receita-single.css">
+{% endblock styles %}
+
+{% block content %}
+
+<div class="container">
+  <div class="receita-container">
+
+    <div class="image-container">
+        <img src="{{item.image}}">
+    </div><!--image-container-->
+    
+    <div class="title">
+        <h1>{{item.title}}</h1>
+        <h3>por {{chefs.name}}</h3>
+
+    </div><!--title-->
+
+    <div class="ingredients">
+      <h1>Ingredientes</h1><a id="element1">esconder</a>
+      <ul>
+          {% for ingredient in item.ingredients %}
+            <li>{{ingredient}}</li>
+          {% endfor %}
+      </ul>
+    </div><!--ingredients-->
+
+    <div class="preparo">
+        <h1>Modo de preparo</h1><a id="element2">esconder</a>
+        <ul id="ulElement2">
+            {% for preparo in item.preparation %}
+              <li>{{preparo}}</li>
+            {% endfor %}
+        </ul>
+    </div><!--preparo-->
+
+    <div class="informacoes">
+      <h1>Informações adicionais</h1><a id="element3">esconder</a>
+      <ul id="ulElement3">
+        <li>{{item.information}}</li>
+      </ul>
+    </div>
+  </div><!--receita-container-->
+</div><!--container-->
+
+{% endblock content %}
+
+{% block scripts %}
+
+  <script src="/Scripts/script.js"></script>
+
+{% endblock scripts %}

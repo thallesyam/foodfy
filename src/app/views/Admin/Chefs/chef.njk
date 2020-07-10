@@ -1,0 +1,51 @@
+{% extends 'Admin/Chefs/layout.njk' %}
+
+{% block scripts %}
+
+  <link rel="stylesheet" href="/Styles/Admin/detail-chef.css">
+
+{% endblock scripts %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="header-detail">
+      <h1>Chef: {{item.name}}</h1>
+      <a href="/Admin/chefs/{{item.id}}/edit">Editar chef</a>
+    </div>
+
+    <div class="chef-detail">
+      <img src="{{item.avatar_url}}" alt="">
+      <h1>{{item.name}}</h1>
+      <p>{{totalRecipes.total_recipe}} 
+        {% if totalRecipes.total_recipe > 1 %}
+          receitas
+        {% else%}
+          receita
+        {% endif %}
+        
+      </p>
+    </div>
+
+    <div class="recipe-detail">
+      <h2>Receitas</h2>
+      
+      <div class="cards">
+        <div class="card">
+          {% for recipe in recipes %}
+            <div class="img" style="background-image: url('{{recipe.image}}')"></div>
+            <div class="card-text">
+              <h3>{{recipe.title}}</h3>
+              <span>{{item.name}}</span>
+              <a href="/Admin/recipes/{{recipe.id}}">Visualizar</a>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
+
